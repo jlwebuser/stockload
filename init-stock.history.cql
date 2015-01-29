@@ -3,9 +3,9 @@
 // Run using cqlsh <node> -f <thisfile>
 //
 
-create keyspace stocks with replication = { 'class' : 'SimpleStrategy', 'replication_factor' : 1 };
+create keyspace if not exists stocks with replication = { 'class' : 'SimpleStrategy', 'replication_factor' : 1 };
 
-create table stocks.history(	symbol ascii, 
+create table if not exists stocks.history(	symbol ascii, 
 				yyyymmdd ascii,
 				open float,
 				high float, 
